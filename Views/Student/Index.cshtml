@@ -1,0 +1,29 @@
+@model IEnumerable<Student>
+
+<h2>Student List</h2>
+<a href="/Student/Create" class="btn btn-primary">Create Student</a>
+<hr>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width: 150px;">@Html.DisplayNameFor(m => m.StudentId)</th>
+            <th>@Html.DisplayNameFor(m => m.StudentName)</th>
+            <th>@Html.DisplayNameFor(m => m.StudentSurname)</th>
+            <th style="width: 150px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var Student in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => Student.StudentId)@*Bu şekilde de gösterebiliriz*@</td>
+            <td>@Student.StudentName</td>
+            <td>@Student.StudentSurname</td>
+            <td>
+                <a href="" class="btn btn-primary btn-sm">Details</a>
+                <a href="" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
