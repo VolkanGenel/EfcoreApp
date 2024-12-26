@@ -18,12 +18,52 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/sezaigenel/Desktop/aspdotnet/aspnetcore-dersleri-udemy/EfcoreApp
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/sezaigenel/Desktop/aspdotnet/aspnetcore-dersleri-udemy/EfcoreApp/Views/Course/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ291cnNlL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sezaigenel/Desktop/aspdotnet/aspnetcore-dersleri-udemy/EfcoreApp/Views/Course/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ291cnNlL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sezaigenel/Desktop/aspdotnet/aspnetcore-dersleri-udemy/EfcoreApp/Views/Course/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ291cnNlL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sezaigenel/Desktop/aspdotnet/aspnetcore-dersleri-udemy/EfcoreApp/Views/Course/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ291cnNlL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sezaigenel/Desktop/aspdotnet/aspnetcore-dersleri-udemy/EfcoreApp/Views/CourseRegistration/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ291cnNlUmVnaXN0cmF0aW9uL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sezaigenel/Desktop/aspdotnet/aspnetcore-dersleri-udemy/EfcoreApp/Views/CourseRegistration/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ291cnNlUmVnaXN0cmF0aW9uL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/sezaigenel/Desktop/aspdotnet/aspnetcore-dersleri-udemy/EfcoreApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/sezaigenel/Desktop/aspdotnet/aspnetcore-dersleri-udemy/EfcoreApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sezaigenel/Desktop/aspdotnet/aspnetcore-dersleri-udemy/EfcoreApp/Views/Instructor/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zdHJ1Y3Rvci9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sezaigenel/Desktop/aspdotnet/aspnetcore-dersleri-udemy/EfcoreApp/Views/Instructor/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zdHJ1Y3Rvci9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sezaigenel/Desktop/aspdotnet/aspnetcore-dersleri-udemy/EfcoreApp/Views/Instructor/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zdHJ1Y3Rvci9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sezaigenel/Desktop/aspdotnet/aspnetcore-dersleri-udemy/EfcoreApp/Views/Instructor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zdHJ1Y3Rvci9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/sezaigenel/Desktop/aspdotnet/aspnetcore-dersleri-udemy/EfcoreApp/Views/Shared/Error.cshtml]

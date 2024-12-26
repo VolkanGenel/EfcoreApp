@@ -15,6 +15,7 @@ namespace EfcoreApp.Data
         public DbSet<Course> Courses => Set<Course>();
         public DbSet<Student> Students => Set<Student>();
         public DbSet<CourseRegistration> CourseRegistrations => Set<CourseRegistration>();
+        public DbSet<Instructor> Instructors => Set<Instructor>();
     }
     // => iki şekilde yapılabilir Entityler üzerinden veritabanı tabloları oluşturmak ya da Sql tablolarından Entityleri çekmek
     // code-first => entity, dbcontext => database (sqlite)

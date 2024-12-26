@@ -1,0 +1,27 @@
+@model Instructor
+
+<h2>Add Instructor</h2>
+<hr>
+<form asp-controller="Instructor" asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Instructor Name</label>
+        <input asp-for="Name" class="form-control" type="text">
+    </div>
+        <div class="mb-3">
+        <label asp-for="Surname" class="form-label">Instructor Surname</label>
+        <input asp-for="Surname" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="EMail" class="form-label">EMail</label>
+        <input asp-for="EMail" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="PhoneNumber" class="form-label">PhoneNumber</label>
+        <input asp-for="PhoneNumber" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="StartDate" class="form-label">Start Date</label>
+        <input asp-for="StartDate" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-secondary">Save</button>
+</form>

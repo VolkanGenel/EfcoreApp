@@ -1,18 +1,18 @@
-@model Student
+@model Instructor
 
-<h2>Update Student</h2>
+<h2>Update Instructor</h2>
 <hr>
 <div class="row">
     <div class="col-8">
-        <form asp-controller="Student" asp-action="Edit" method="post">
-            <input type="hidden" asp-for="StudentId">
+        <form asp-controller="Instructor" asp-action="Edit" method="post">
+            <input type="hidden" asp-for="InstructorId">
             <div class="mb-3">
-                <label asp-for="StudentName" class="form-label">Student Name</label>
-                <input asp-for="StudentName" class="form-control">
+                <label asp-for="Name" class="form-label">Instructor Name</label>
+                <input asp-for="Name" class="form-control">
             </div>
             <div class="mb-3">
-                <label asp-for="StudentSurname" class="form-label">Student Surname</label>
-                <input asp-for="StudentSurname" class="form-control">
+                <label asp-for="Surname" class="form-label">Instructor Surname</label>
+                <input asp-for="Surname" class="form-control">
             </div>
             <div class="mb-3">
                 <label asp-for="EMail" class="form-label">EMail</label>
@@ -22,6 +22,10 @@
                 <label asp-for="PhoneNumber" class="form-label">PhoneNumber</label>
                 <input asp-for="PhoneNumber" class="form-control">
             </div>
+            <div class="mb-3">
+                <label asp-for="StartDate" class="form-label">Start Date</label>
+                <input asp-for="StartDate" class="form-control">
+            </div>
             <button type="submit" class="btn btn-secondary">Kaydet</button>
         </form>
     </div>
@@ -29,9 +33,9 @@
         <h4>Courses</h4>
         <hr>
         <ul>
-            @foreach (var item in @Model.CourseRegistrations)
+            @foreach (var item in @Model.Courses)
             {
-                <li>@item.Course.Title</li>
+                <li>@item.Title</li>
             }
         </ul>
     </div>

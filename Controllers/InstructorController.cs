@@ -1,19 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using EfcoreApp.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace EfcoreApp.Controllers
 {
-    public class StudentController : Controller
+    public class InstructorController: Controller
     {
         private readonly DataContext _context;
 
-        public StudentController(DataContext context)
+        public InstructorController(DataContext context)
         {
-            _context = context;
+            this._context = context;
         }
-        // var context = new DataContext(); Bunu yazmaya gerek yok. Onun yerine constructor injection yapacağız.
 
+
+        public async Task<IActionResult> Index()
+        {
+            var instructors = await _context.Instructors.ToListAsync();
+            return View(instructors);
+        }
+
+
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
@@ -21,56 +34,47 @@ namespace EfcoreApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Student model)
+        public async Task<IActionResult> Create(Instructor model)
         {
-            _context.Students.Add(model);
+            _context.Instructors.Add(model);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Edit (int? id)
         {
-            var students = await _context.Students.ToListAsync();
-            return View(students);
-        }
-
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
+            if(id==null)
             {
                 return NotFound();
             }
-            var entity = await _context.Students.Include(o=> o.CourseRegistrations).ThenInclude(x => x.Course).FirstOrDefaultAsync(o=>o.StudentId==id); //BU KISIM ÖNEMLİ ÖNCE ÖĞRENCİ İÇİNDEKİ KURS KAYITLARINI, SONRA KURS KAYITLARI İÇİNDEKİ KURSLARI EKLEDİK. 
-            // await _context.Students.FindAsync(id); Alttaki ile aynı anlama gelir. Async metot async olduğu için.
-            // FindAsync sade id içinken FinOrDefaultAsync ile her değişken aranabilir.
-            // var entity = await _context.Students.FirstOrDefaultAsync(o => o.StudentId==id);
-
-            if (entity == null)
+            var instructor = await _context.Instructors.Include(x=>x.Courses).FirstOrDefaultAsync(x=>x.InstructorId==id);
+            
+            if(instructor==null)
             {
                 return NotFound();
             }
-            return View(entity);
+            return View(instructor);
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int? id, Student model)
+        public async Task<IActionResult> Edit (int? id, Instructor model)
         {
-            if (id != model.StudentId)
+            if(id!=model.InstructorId)
             {
                 return NotFound();
             }
+            
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Students.Update(model);
+                    _context.Instructors.Update(model);
                     await _context.SaveChangesAsync();
                     return RedirectToAction("Index");
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!_context.Students.Any(x => x.StudentId == model.StudentId))
+                    if (!_context.Instructors.Any(x => x.InstructorId == model.InstructorId))
                     {
                         return NotFound();
                     }
@@ -80,7 +84,6 @@ namespace EfcoreApp.Controllers
             }
             return View(model);
         }
-
         [HttpGet]
         public async Task<IActionResult> Delete(int? id)
         {
@@ -88,7 +91,7 @@ namespace EfcoreApp.Controllers
             {
                 return NotFound();
             }
-            var entity = await _context.Students.FirstOrDefaultAsync(o => o.StudentId == id);
+            var entity = await _context.Instructors.FirstOrDefaultAsync(o => o.InstructorId == id);
 
             if (entity == null)
             {
@@ -100,7 +103,7 @@ namespace EfcoreApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete([FromForm] int id)
         {
-            var entity = await _context.Students.FirstOrDefaultAsync(o => o.StudentId == id);
+            var entity = await _context.Instructors.FirstOrDefaultAsync(o => o.InstructorId == id);
 
             if (entity == null)
             {
@@ -108,13 +111,13 @@ namespace EfcoreApp.Controllers
             }
             try
             {
-                _context.Students.Remove(entity);
+                _context.Instructors.Remove(entity);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!_context.Students.Any(x => x.StudentId == entity.StudentId))
+                if (!_context.Instructors.Any(x => x.InstructorId == entity.InstructorId))
                 {
                     return NotFound();
                 }

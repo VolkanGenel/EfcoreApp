@@ -1,0 +1,31 @@
+@model IEnumerable<Instructor>
+
+<h2>Instructor List</h2>
+<a asp-controller="Instructor" asp-action="Create" class="btn btn-primary">Add Instructor</a>
+<hr>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width: 150px;">@Html.DisplayNameFor(m => m.InstructorId)</th>
+            <th>@Html.DisplayNameFor(m => m.Name)</th>
+            <th>@Html.DisplayNameFor(m => m.Surname)</th>
+            <th>@Html.DisplayNameFor(m => m.StartDate)</th>
+            <th style="width: 150px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.InstructorId)@*Bu şekilde de gösterebiliriz*@</td>
+            <td>@item.Name</td>
+            <td>@item.Surname</td>
+            <td>@item.StartDate.ToString("dd-MM-yyyy")</td>
+            <td>
+                <a asp-controller="Instructor" asp-action="Edit" asp-route-id="@item.InstructorId" class="btn btn-primary btn-sm">Edit</a>
+                <a asp-controller="Instructor" asp-action="Delete" asp-route-id="@item.InstructorId" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

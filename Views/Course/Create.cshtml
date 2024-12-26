@@ -1,0 +1,18 @@
+@model CourseDTO
+
+<h2>Create Course</h2>
+<hr>
+<form asp-controller="Course" asp-action="Create" method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label">Course Title</label>
+        <input asp-for="Title" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="InstructorId" class="=form-label">Instructor</label>
+        <select asp-for="InstructorId" asp-items="ViewBag.Instructors" class="form-select">
+            <option value="">Choose</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-secondary">Save</button>
+</form>

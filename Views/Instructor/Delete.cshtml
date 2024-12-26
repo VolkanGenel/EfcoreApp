@@ -1,9 +1,9 @@
-@model Student
+@model Instructor
 
 <p>
-    <b> @Model.StudentName @Model.StudentSurname</b> Do you want to erase student?
+    <b> @Model.Name @Model.Surname</b> Do you want to erase instructor?
     <form asp-action="Delete" method="post">
-        <input type="hidden" value="@Model.StudentId" name="id">
+        <input type="hidden" value="@Model.InstructorId" name="id">
         <button type="submit" class="btn btn-danger">Yes</button>
         <a asp-action="Index" class="btn btn-primary">No</a>
     </form>

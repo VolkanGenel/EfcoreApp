@@ -8,7 +8,14 @@ namespace EfcoreApp.Data
         public int StudentId { get; set; }
         public string? StudentName { get; set; }
         public string? StudentSurname { get; set; }
+        public string NameSurname {
+            get
+            {
+                return this.StudentName+" "+this.StudentSurname;
+            }
+        }
         public string? EMail { get; set; }
         public string? PhoneNumber { get; set; }
+        public ICollection<CourseRegistration> CourseRegistrations { get; set; } = new List<CourseRegistration>();
     }
 }
